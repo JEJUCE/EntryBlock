@@ -78,7 +78,7 @@ const LibraryCreator = {
       if (typeof useWebGL == "undefined") {
         updateCategory(category)
         // 아이콘 적용
-        $('head').append(`<style>#entryCategory${category}{background-image:url(https://raw.githack.com/JEJUCE/EntryBlock/main/logo.svg);background-repeat:no-repeat;margin-bottom:1px;backgrfpound-position-y: 10px;background-size: 20px;}.entrySelectedCategory#entryCategory${category}{background-image:url(https://raw.githack.com/JEJUCE/EntryBlock/main/logo.svg);background-color:#000000;border-color:#000000;color:#fff}</style>`)
+        $('head').append(`<style>#entryCategory${category}{background-image:url(https://raw.githack.com/JEJUCE/EntryBlock/main/logo.svg);background-repeat:no-repeat;margin-bottom:1px;backgrfpound-position-y: 10px;background-size: 20px;}.entrySelectedCategory#entryCategory${category}{background-image:url(https://raw.githack.com/JEJUCE/EntryBlock/main/logo.svg);background-color:#8222ff;border-color:#670bdd;color:#fff}</style>`)
         // 카테고리 이름 적용
         $(`#entryCategory${category}`).append(text)
       }
@@ -87,28 +87,7 @@ const LibraryCreator = {
   const blocks = [
 //////////////////////////////////////
       
-//////////////////////////////////////
-    {
-      name: 'firsttext', // 이름 지정
-      template: '%1', // 표시할 내용
-      skeleton: 'basic_text', // 형식(기본 텍스트)
-      color: { // 색깔
-        default: EntryStatic.colorSet.common.TRANSPARENT, // 투명
-        darken: EntryStatic.colorSet.common.TRANSPARENT // 투명
-      },
-      params: [ // %n의 형식 지정
-        { // %1의 형식 정의
-          type: 'Text', // 텍스트 형식
-          text: '웹', // 표시 내용
-          color: EntryStatic.colorSet.common.TEXT, // 검은색
-          align: 'center'
-        }
-      ],
-      def: [],
-      map: {},
-      class: 'text'
-    },
-//////////////////////////////////////
+
 
 //////////////////////////////////////
     {
@@ -145,5 +124,5 @@ const LibraryCreator = {
 
 ]
   alert('로딩완료')
-document.title = "Entry_Strong_Block";
+document.title = "Entry_Block";
 LibraryCreator.start(blocks, 'API', 'Test')
