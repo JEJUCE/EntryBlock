@@ -122,6 +122,86 @@ const LibraryCreator = {
     },
 //////////////////////////////////////
 
+//////////////////////////////////////
+    {
+      name: 'arduino', // 블럭 이름 지정
+      template: '블럭테스트', // 표시할 내용
+      skeleton: 'basic_string_field', // 블럭 형식(basic은 일반 블럭)
+      color: { // 색깔
+        default: '#990033', //RGB 색깔
+        darken: '#750028' //RGB 색깔
+      },
+      params: [
+        {
+            type: 'Dropdown',
+            options: [
+                ['0', 'A0'],
+                ['1', 'A1'],
+                ['2', 'A2'],
+                ['3', 'A3'],
+                ['4', 'A4'],
+                ['5', 'A5'],
+            ],
+            value: 'A0',
+            fontSize: 11,
+            bgColor: EntryStatic.colorSet.block.darken.HARDWARE,
+            arrowColor: EntryStatic.colorSet.arrow.default.HARDWARE,
+        },
+      ],
+      def: {
+        params: [null],
+      },
+      paramsKeyMap: {
+        PORT: 0,
+      },
+      class: 'text',
+      func(sprite, script) {
+        return script.getStringField('PORT');
+      },
+      syntax: {
+        js: [],
+        py: [
+            {
+                syntax: '%1',
+                textParams: [
+                    {
+                        type: 'Dropdown',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9'],
+                            ['10', '10'],
+                            ['11', '11'],
+                            ['12', '12'],
+                            ['13', '13'],
+                        ],
+                        value: '0',
+                        fontSize: 11,
+                        bgColor: EntryStatic.colorSet.block.darken.HARDWARE,
+                        arrowColor: EntryStatic.colorSet.arrow.default.HARDWARE,
+                    },
+                ],
+                keyOption: 'arduino_get_port_number',
+            },
+        ],
+      },
+
+
+
+
+    },
+
+
+
+//////////////////////////////////////
+
 ]
   alert('로딩완료')
 document.title = "Entry_Block";
