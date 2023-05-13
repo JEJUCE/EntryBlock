@@ -151,47 +151,12 @@ const LibraryCreator = {
       def: {
         params: [null],
       },
-      paramsKeyMap: {
-        PORT: 0,
-      },
+     
       class: 'text',
       func(sprite, script) {
         return script.getStringField('PORT');
       },
-      syntax: {
-        js: [],
-        py: [
-            {
-                syntax: '%1',
-                textParams: [
-                    {
-                        type: 'Dropdown',
-                        options: [
-                            ['0', '0'],
-                            ['1', '1'],
-                            ['2', '2'],
-                            ['3', '3'],
-                            ['4', '4'],
-                            ['5', '5'],
-                            ['6', '6'],
-                            ['7', '7'],
-                            ['8', '8'],
-                            ['9', '9'],
-                            ['10', '10'],
-                            ['11', '11'],
-                            ['12', '12'],
-                            ['13', '13'],
-                        ],
-                        value: '0',
-                        fontSize: 11,
-                        bgColor: EntryStatic.colorSet.block.darken.HARDWARE,
-                        arrowColor: EntryStatic.colorSet.arrow.default.HARDWARE,
-                    },
-                ],
-                keyOption: 'arduino_get_port_number',
-            },
-        ],
-      },
+     
 
 
 
