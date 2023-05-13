@@ -140,6 +140,56 @@ const blocks = [
     },
   },
 //////////////////////////////////////
+  {
+    name: 'digit', // 블럭 이름 지정
+    template: '%1 내용을 브라우저 콘솔에 %2 하기%3',
+    skeleton: 'basic', // 블럭 형식(basic은 일반 블럭)
+    color: { // 색깔
+      default: '#990033', //RGB 색깔
+      darken: '#750028' //RGB 색깔
+    },
+    params: [
+			{
+				type: 'Block',
+				accept: 'string'
+			},
+			{
+				type: 'Dropdown',
+				options: [
+					['로그', 'log'],
+					['경고', 'warn'],
+					['오류', 'error'],
+					['알림', 'info']
+				],
+				fontSize: 11,
+				arrowColor: '#f78640',
+				value: 'log'
+			},
+			{
+				type: 'Indicator',
+				img: 'block_icon/start_icon_play.svg',
+				size: 11,
+			}
+		],
+		def: [
+			{
+				type: 'text',
+				params: [`엔트리`]
+			},
+			null,
+			null
+		],
+		map: {
+			CONTENT: 0,
+			TYPE: 1
+		},
+		class: 'text',
+		func: async (sprite, script) => {
+			console[script.getValue('TYPE', script)](script.getValue('CONTENT', script));
+			return script.callReturn();
+		},
+	},
+  
 //////////////////////////////////////
   {
     name: 'SearchNaver', // 블럭 이름 지정
