@@ -124,49 +124,37 @@ const LibraryCreator = {
 
 //////////////////////////////////////
     {
-      name: 'arduino', // 블럭 이름 지정
+      name: 'Testblock', // 블럭 이름 지정
       template: '블럭테스트', // 표시할 내용
-      skeleton: 'basic_string_field', // 블럭 형식(basic은 일반 블럭)
+      skeleton: 'basic', // 블럭 형식(basic은 일반 블럭)
       color: { // 색깔
         default: '#990033', //RGB 색깔
         darken: '#750028' //RGB 색깔
       },
-      params: [
-        {
-            type: 'Dropdown',
-            options: [
-                ['0', 'A0'],
-                ['1', 'A1'],
-                ['2', 'A2'],
-                ['3', 'A3'],
-                ['4', 'A4'],
-                ['5', 'A5'],
-            ],
-            value: 'A0',
-            fontSize: 11,
-            bgColor: EntryStatic.colorSet.block.darken.HARDWARE,
-            arrowColor: EntryStatic.colorSet.arrow.default.HARDWARE,
-        },
+      params: [ // %n 정의
+        { // %1 정의
+          type: 'Block', // 형식 지정(입력값)
+          accept: 'string'
+        }
       ],
-      def: {
-        params: [null],
+      def: [ // %n 기본값
+        { // %1 정의
+          type: 'text',
+          params: ['entry'] // 기본으로 입력된 값
+        },
+        null // %2 정의(이미지 형식이므로 null로 설정)
+      ],
+      map: {
+        Test: 0 // %1의 입력값을 불러올 변수 이름(대문자)
       },
-     
       class: 'text',
-      func(sprite, script) {
-        return script.getStringField('PORT');
+      func: async (sprite, script) => { // 실행할 JS 코드
+
+        return script.callReturn() // 일반 블럭 코드 뒤에는 반드시 붙여주세요
       },
-     
-
-
-
-
     },
 
-
-
 //////////////////////////////////////
-
 ]
   alert('로딩완료')
 document.title = "Entry_Block";
