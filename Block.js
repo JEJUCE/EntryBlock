@@ -115,8 +115,8 @@ const blocks = [
     template: '블럭테스트', // 표시할 내용
     skeleton: 'basic', // 블럭 형식(basic은 일반 블럭)
     color: { // 색깔
-      default: '#990033', //RGB 색깔
-      darken: '#750028' //RGB 색깔
+      default: '#00b9c2', //RGB 색깔
+      darken: '#00b9c2' //RGB 색깔
     },
     params: [ // %n 정의
       { // %1 정의
@@ -145,8 +145,8 @@ const blocks = [
     template: '디지털 %1번 핀 %2',
     skeleton: 'basic', // 블럭 형식(basic은 일반 블럭)
     color: { // 색깔
-      default: '#990033', //RGB 색깔
-      darken: '#750028' //RGB 색깔
+      default: '#00b9c2', //RGB 색깔
+      darken: '#00b9c2' //RGB 색깔
     },
     params: [
 			{
