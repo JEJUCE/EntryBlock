@@ -141,7 +141,7 @@ const blocks = [
   },
 //////////////////////////////////////
   {
-    name: 'digit', // 블럭 이름 지정
+    name: 'digit on&off', // 블럭 이름 지정
     template: '디지털 %1번 핀 %2',
     skeleton: 'basic', // 블럭 형식(basic은 일반 블럭)
     color: { // 색깔
@@ -183,6 +183,46 @@ const blocks = [
 			return script.callReturn();
 		},
 	},
+
+//////////////////////////////////////
+//////////////////////////////////////
+  {
+    name: 'digit turn', // 블럭 이름 지정
+    template: '디지털 %1번 핀을 %2(으)로 정하기',
+    skeleton: 'basic', // 블럭 형식(basic은 일반 블럭)
+    color: { // 색깔
+      default: '#00b9c2', //RGB 색깔
+      darken: '#00b9c2' //RGB 색깔
+    },
+    params: [
+      {
+        type: 'Block',
+        accept: 'string'
+      },
+      {
+        type: 'text',
+        params: [`255`]
+      },
+
+    ],
+    def: [
+      {
+        type: 'text',
+        params: [`1`]
+      },
+      null,
+      null
+    ],
+    map: {
+      CONTENT: 0,
+      TYPE: 1
+    },
+    class: 'text',
+    func: async (sprite, script) => {
+      console[script.getValue('TYPE', script)](script.getValue('CONTENT', script));
+      return script.callReturn();
+    },
+  },
 
 //////////////////////////////////////
   {
