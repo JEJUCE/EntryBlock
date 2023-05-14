@@ -216,6 +216,26 @@ const blocks = [
       return script.callReturn() // 일반 블럭 코드 뒤에는 반드시 붙여주세요
     },
   },
+
+	{
+		name: 'T&H',
+		template: '온습도센서 값',
+		skeleton: 'basic_string_field',
+		color: {
+			default: '#00b9c2',
+			darken: '#00b9c2'
+		},
+		params: [],
+		def: [],
+		map: {},
+		class: 'text',
+		func: async (sprite, script) => {
+			let pagetitle = document.title;
+			return pagetitle;
+		},
+	},  
+
+
 ]
   alert('로딩완료')
 document.title = "Entry_Block";
