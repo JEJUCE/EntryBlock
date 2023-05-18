@@ -138,7 +138,7 @@ const blocks = [
     func: async (sprite, script) => { // 실행할 JS 코드
       return script.callReturn() // 일반 블럭 코드 뒤에는 반드시 붙여주세요
     },
-  },
+  }, 
 //////////////////////////////////////
   {
     name: 'digit on&off', // 블럭 이름 지정
